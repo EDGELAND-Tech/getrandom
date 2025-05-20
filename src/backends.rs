@@ -139,7 +139,7 @@ cfg_if! {
             } else if #[cfg(target_env = "p2")] {
                 mod wasi_p2;
                 pub use wasi_p2::*;
-            } else if #[cfg(all(target_env = "", target_vendor = "wasmer"))] {
+            } else if #[cfg(target_vendor = "wasmer")] {
                 // 由于wasix是基于p1的，所以这里可以直接使用p1的实现
                 mod wasi_p1;
                 pub use wasi_p1::*;
